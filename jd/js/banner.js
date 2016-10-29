@@ -1,8 +1,12 @@
 $.ajax({
 	type:"get",
-	url:"JSON/banner_left_homeEle.json",
+//	url:"JSON/banner_left_homeEle.json",
+	url:"JSON/banner_left_homeEle.txt",
 	async:true,
 	success:function(res){
+		console.log(1,res);
+		res=JSON.parse(res);
+		console.log(2,res);
 		$(res).each(function(index){
 			//把第一标题追加到.banner_list  li a标签中，
 			var mLi=$('<li><a href="#">'+res[index]["first-title"]+'<i>&gt;</i></a><div></div></li>');	
